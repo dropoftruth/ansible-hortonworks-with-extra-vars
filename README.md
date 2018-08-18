@@ -7,6 +7,7 @@ The repository shows how to override variables in ansible-hortonworks/inventory/
 
 ### In /etc/profile.d/sh.local add secret key and access key
 export AWS_SECRET_ACCESS_KEY=
+
 export AWS_ACCESS_KEY_ID=
 
 ### Clone ansible-hortonworks repository:
