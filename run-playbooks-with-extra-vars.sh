@@ -2,10 +2,12 @@
 
 virtualenv ~/ansible; source ~/ansible/bin/activate
 
+export FILENAME=`basename $1`
+
 export CLOUD_TO_USE=aws
-export OUTPUT=../output-yaml-files-$1
-export EXTRA_VARS_AWS=@config/aws_cluster.yml
-export EXTRA_VARS_HDP=@config/$1
+export OUTPUT=../output-yaml-files-$FILENAME
+export EXTRA_VARS_AWS=@../config/aws-cluster.yml
+export EXTRA_VARS_HDP=@../config/$FILENAME
 
 cd ./ansible-hortonworks/
 
@@ -31,7 +33,6 @@ ansible-playbook -v -i "inventory/${cloud_to_use}" -e "cloud_name=${cloud_to_use
 #4
 # configure_ambari.sh
 ansible-playbook -v -i "inventory/${cloud_to_use}" -e "cloud_name=${cloud_to_use}" playbooks/configure_ambari.yml --extra-vars="$EXTRA_VARS_AWS" --extra-vars="$EXTRA_VARS_HDP" > $OUTPUT/configure_ambari.out
-
 
 #5
 # apply_blueprint.sh
