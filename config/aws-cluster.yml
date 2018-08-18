@@ -49,7 +49,7 @@ nodes:
   - host_group: "hdp-edge"
     count: 0
     image: ami-2a7d75c0                                            # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
-    type: t2.micro
+    type: t2.xlarge
     public_ip: true
     security_groups: default_cluster_access
     root_volume:
