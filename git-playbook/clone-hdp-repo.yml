@@ -4,5 +4,4 @@
     - name: Clone ansible-hortonworks
       git:
         repo: 'https://github.com/hortonworks/ansible-hortonworks.git'
-        dest: ../
-        update: yes
+        dest: ../ansible-hortonworks
