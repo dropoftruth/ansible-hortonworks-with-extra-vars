@@ -20,7 +20,7 @@ ansible-playbook -v git-playbook/clone-hdp-repo.yml > $OUTPUT/clone-hdp-repo.yml
 
 #0
 # set_cloud.sh
-. set_cloud.sh
+. ansible-hortonworks/set_cloud.sh
 
 #1
 # prepare_cloud.sh
