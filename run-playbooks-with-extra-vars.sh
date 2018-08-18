@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 virtualenv ~/ansible; source ~/ansible/bin/activate
 
 export FILENAME=`basename $1`
@@ -10,13 +9,13 @@ export OUTPUT=../output-yaml-files-$FILENAME
 export EXTRA_VARS_AWS=@../config/aws-cluster.yml
 export EXTRA_VARS_HDP=@../config/$FILENAME
 
-rm -rf $OUTPUT
-mkdir $OUTPUT
-
 # clone repository
-ansible-playbook -v ../git-playbook/clone-hdp-repo.yml
+ansible-playbook git-playbook/clone-hdp-repo.yml
 
 cd ./ansible-hortonworks/
+
+rm -rf $OUTPUT
+mkdir $OUTPUT
 
 #0
 # set_cloud.sh
