@@ -1,5 +1,8 @@
 ---
-- git:
-    repo: 'https://github.com/hortonworks/ansible-hortonworks.git'
-    dest: .
-    update: yes
+hosts: localhost
+tasks:
+  - name: Clone ansible-hortonworks
+    git:
+      repo: 'https://github.com/hortonworks/ansible-hortonworks.git'
+      dest: .
+      update: yes
