@@ -2,7 +2,6 @@
 
 
 virtualenv ~/ansible; source ~/ansible/bin/activate
-cd ./ansible-hortonworks/
 
 export FILENAME=`basename $1`
 
@@ -15,7 +14,9 @@ rm -rf $OUTPUT
 mkdir $OUTPUT
 
 # clone repository
-ansible-playbook -v ../git-playbook/clone-hdp-repo.yml > $OUTPUT/clone-hdp-repo.out
+ansible-playbook -v ../git-playbook/clone-hdp-repo.yml
+
+cd ./ansible-hortonworks/
 
 #0
 # set_cloud.sh
