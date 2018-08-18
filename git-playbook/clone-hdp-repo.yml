@@ -1,0 +1,4 @@
+- git:
+    repo: 'https://github.com/hortonworks/ansible-hortonworks.git'
+    dest: .
+    update: yes
